@@ -1,0 +1,11 @@
+name: muavia_asghar_dictionary
+description: Your project description
+version: 1.0.0
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  http: ^0.13.3
+
+# Other configurations...
