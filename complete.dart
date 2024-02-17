@@ -10,8 +10,8 @@ Future<void> definition(String? word) async {
     final List<dynamic> data = json.decode(response.body);
 
     if (data.isNotEmpty) {
-      final definition = data[0]['meanings'][0]['definitions'][0]['definition'];
-      print('Definition of $word: $definition');
+      final meaning = data[0]['meanings'][0]['definitions'][0]['definition'];
+      print('Definition of $word: $meaning');
     } else {
       print('No definition found for $word.');
     }

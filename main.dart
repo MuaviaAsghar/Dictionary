@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'definition.dart';
+import 'onlyDefinition.dart';
 
 void main() async {
   stdout.write("Enter a word:");
