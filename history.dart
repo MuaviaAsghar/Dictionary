@@ -1,25 +1,20 @@
 import 'dart:io';
 
-void addToHistory(String word) {
+addToHistory(String? word) {
   final historyFile = File('history.txt');
 
   if (!historyFile.existsSync()) {
     historyFile.createSync();
   }
 
-  // Read existing content, if any
   final existingContent = historyFile.readAsStringSync();
 
-  // Append the new word to the existing content
   final newContent = '$existingContent\n$word';
 
-  // Write the updated content back to the file
   historyFile.writeAsStringSync(newContent);
-
-  print('Search history updated.');
 }
 
-void showHistory() {
+showHistory() {
   final historyFile = File('history.txt');
 
   if (!historyFile.existsSync()) {
@@ -34,5 +29,14 @@ void showHistory() {
   } else {
     print('Search History:');
     print(historyContent);
+  }
+}
+
+deleteHistory() {
+  final historyFile = File('history.txt');
+  if (historyFile.existsSync()) {
+    historyFile.delete();
+  } else {
+    print("File already didn't exist");
   }
 }

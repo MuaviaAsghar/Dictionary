@@ -17,14 +17,32 @@ void main() async {
 
   final number = stdin.readLineSync();
   if (number == '1') {
-    print("Enter the word for full meaning:");
+    stdout.write("Enter the word for full meaning:");
     final word = stdin.readLineSync();
     await meaning(word);
+    await addToHistory(word);
   } else if (number == '2') {
+    stdout.write("Enter the word for full meaning:");
     final word = stdin.readLineSync();
     await definition(word);
+    await addToHistory(word);
   } else if (number == '3') {
     showHistory();
+    print("");
+    print("");
+    print("Clear History");
+    print("");
+    print("");
+    print("If you want to clear history type `Clear` in terminal");
+    print("");
+    print("");
+
+    final delete = stdin.readLineSync();
+    if (delete == "Clear") {
+      deleteHistory();
+    } else {
+      print("You're good to go");
+    }
   } else if (number == '4') {
     await help();
   } else if (number == '5') {
