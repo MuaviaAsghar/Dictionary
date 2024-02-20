@@ -15,9 +15,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///C:/Users/newga/AppData/Local/Pub/Cache/hosted/pub.dev/http-0.13.6",
+      "rootUri": "file:///C:/Users/newga/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.2"
     },
     {
       "name": "http_parser",
@@ -62,13 +62,19 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "web",
+      "rootUri": "file:///C:/Users/newga/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "muavia_asghar_dictionary",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-02-17T08:52:53.260903Z",
+  "generated": "2024-02-20T14:45:56.693877Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }

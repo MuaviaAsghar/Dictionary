@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'onlyDefinition.dart';
-import 'aboutme.dart';
+import 'about.dart';
 import 'help.dart';
 import 'printFullMeaning.dart';
 import 'history.dart';
 
-void main() async {
+Future<void> main() async {
   print("Welcome");
   print('------------');
   print("1.Get full meaning of the word.");
@@ -13,6 +13,7 @@ void main() async {
   print("3.History");
   print("4.Help");
   print("5.About me");
+  print("");
   stdout.write("Enter the number corresponding to your choice:");
 
   final number = stdin.readLineSync();
@@ -44,9 +45,9 @@ void main() async {
       print("You're good to go");
     }
   } else if (number == '4') {
-    await help();
+    await about();
   } else if (number == '5') {
-    await aboutme();
+    await help();
   } else {
     print("Invalid choice. Please enter a number between 1 and 5.");
   }
