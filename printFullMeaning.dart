@@ -52,6 +52,7 @@ Future<void> meaning(String? word) async {
       print('No definition found for $word.');
     }
   } else {
-    print('Failed to fetch data. Status code: ${response.statusCode}');
+    print("Input not supported or Word not in dictionary.");
+    print("Error ${response.statusCode}");
   }
 }

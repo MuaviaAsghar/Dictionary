@@ -20,6 +20,7 @@ Future<void> main() async {
   if (number == '1') {
     stdout.write("Enter the word for full meaning:");
     final word = stdin.readLineSync();
+
     await meaning(word);
     await addToHistory(word);
   } else if (number == '2') {
