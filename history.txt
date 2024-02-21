@@ -21,3 +21,5 @@ word
 3412
 41
 poor
+mean
+Mean
