@@ -17,23 +17,23 @@ help() {
   print(
       '   - The "Only Definition" feature returns all possible definitions of a word.');
   print(
-      '   - To use this feature, press 2 in terminalafter running the code and the type the word');
+      '   - To use this feature, press 2 in terminal after running the code and the type the word');
 
   print('');
 
   print('3. History');
   print('   - The "History" feature stores all search data in a text file.');
   print(
-      '   - To view your search history, press 3 in terminalafter running the code.');
+      '   - To view your search history, press 3 in terminal after running the code.');
   print('');
 
   print('4. About Me');
   print(
       '   - The "About Me" feature provides information about the app creator.');
   print(
-      '   - To view the "About Me" page, press 5 in terminalafter running the code. ');
+      '   - To view the "About Me" page, press 5 in terminal after running the code. ');
   print('');
 
   print('================================');
-  print('Thanks for using My Dictionary App!');
+  print('Thanks!');
 }
