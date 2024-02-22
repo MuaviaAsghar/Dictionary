@@ -22,6 +22,7 @@ Future<void> meaning(String? word) async {
           final List<dynamic> synonyms = definition['synonyms'];
           final List<dynamic> antonyms = definition['antonyms'];
           final String? example = definition['example'];
+
           if (definitionText == null) {
             print("No definitions available for word");
           } else {
@@ -55,4 +56,7 @@ Future<void> meaning(String? word) async {
     print("Input not supported or Word not in dictionary.");
     print("Error ${response.statusCode}");
   }
+  print("To rerun type run in terminal.");
+  print("To terminate program type end in terminal.");
+  print("");
 }

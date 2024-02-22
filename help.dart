@@ -36,4 +36,9 @@ help() {
 
   print('================================');
   print('Thanks!');
+  print("");
+  print("To rerun type run in terminal.");
+  print("");
+  print("To terminate program type end in terminal.");
+  print("");
 }

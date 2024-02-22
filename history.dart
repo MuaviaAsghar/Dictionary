@@ -30,6 +30,9 @@ showHistory() {
     print('Search History:');
     print(historyContent);
   }
+  print("To rerun type run in terminal.");
+  print("To terminate program type end in terminal.");
+  print("");
 }
 
 deleteHistory() {

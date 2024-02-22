@@ -27,4 +27,7 @@ Future definition(String? word) async {
     print("Input not supported or Word not in dictionary.");
     print("Error ${response.statusCode}");
   }
+  print("To rerun type run in terminal.");
+  print("To terminate program type end in terminal.");
+  print("");
 }
