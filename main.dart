@@ -28,89 +28,175 @@ Future<void> main() async {
   stdout.write("Enter the number corresponding to your choice:");
   print("");
 
-  final number = stdin.readLineSync();
+  final number = int.parse(stdin.readLineSync()!);
 
-  if (number == '1') {
-    print("");
-    stdout.write("Enter the word for full meaning:");
-    final word = stdin.readLineSync();
-    showLoading();
-    await Future.delayed(const Duration(seconds: 5));
-    await meaning(word);
-    await addToHistory(word);
+  switch (number) {
+    case 1:
+      print("");
+      stdout.write("Enter the word for full meaning:");
+      final word = stdin.readLineSync();
+      showLoading();
+      await Future.delayed(const Duration(seconds: 5));
+      await meaning(word);
+      await addToHistory(word);
 
-    final rerun = stdin.readLineSync();
-    if (rerun == 'run') {
+      final rerun = stdin.readLineSync();
+      if (rerun == 'run') {
+        return main();
+      } else if (rerun == 'end') {
+        exit(0);
+      }
+      break;
+    case 2:
+      print("");
+      stdout.write("Enter the word for all possible defenition:");
+      final word = stdin.readLineSync();
+      showLoading();
+      await Future.delayed(const Duration(seconds: 5));
+      await definition(word);
+      await addToHistory(word);
+
+      final rerun = stdin.readLineSync();
+      if (rerun == 'run') {
+        return main();
+      } else if (rerun == 'end') {
+        exit(0);
+      }
+      break;
+    case 3:
+      showHistory();
+      print("");
+      print("");
+      print("Clear History");
+      print("");
+      print("");
+      print("If you want to clear history type `Clear` in terminal");
+      print("");
+      print("");
+
+      final delete = stdin.readLineSync();
+      if (delete == "Clear") {
+        deleteHistory();
+      }
       return main();
-    } else if (rerun == 'end') {
-      exit(0);
-    }
-  } else if (number == '2') {
-    print("");
-    stdout.write("Enter the word for full meaning:");
-    final word = stdin.readLineSync();
-    showLoading();
-    await Future.delayed(const Duration(seconds: 5));
-    await definition(word);
-    await addToHistory(word);
 
-    final rerun = stdin.readLineSync();
-    if (rerun == 'run') {
-      return main();
-    } else if (rerun == 'end') {
-      exit(0);
-    }
-  } else if (number == '3') {
-    showHistory();
-    print("");
-    print("");
-    print("Clear History");
-    print("");
-    print("");
-    print("If you want to clear history type `Clear` in terminal");
-    print("");
-    print("");
+    case 4:
+      await about();
 
-    final rerun = stdin.readLineSync();
-    if (rerun == 'run') {
-      return main();
-    } else if (rerun == 'end') {
-      exit(0);
-    }
+      final rerun = stdin.readLineSync();
+      if (rerun == 'run') {
+        return main();
+      } else if (rerun == 'end') {
+        exit(0);
+      }
+      break;
+    case 5:
+      await help();
+      final rerun = stdin.readLineSync();
 
-    final delete = stdin.readLineSync();
-    if (delete == "Clear") {
-      deleteHistory();
-    } else {
-      print("You're good to go");
-    }
-  } else if (number == '4') {
-    await about();
+      if (rerun == 'run') {
+        return main();
+      } else if (rerun == 'end') {
+        exit(0);
+      }
+    default:
+      print("Invalid choice. Please enter a number between 1 and 5.");
 
-    final rerun = stdin.readLineSync();
-    if (rerun == 'run') {
-      return main();
-    } else if (rerun == 'end') {
-      exit(0);
-    }
-  } else if (number == '5') {
-    await help();
-    final rerun = stdin.readLineSync();
+      final rerun = stdin.readLineSync();
 
-    if (rerun == 'run') {
-      return main();
-    } else if (rerun == 'end') {
-      exit(0);
-    }
-  } else {
-    print("Invalid choice. Please enter a number between 1 and 5.");
-
-    final rerun = stdin.readLineSync();
-
-    if (rerun == 'run') {
-      return main();
-    } else if (rerun == 'end') {
-      exit(0);
-    }
+      if (rerun == 'run') {
+        return main();
+      } else if (rerun == 'end') {
+        exit(0);
+      }
   }
 }
+
+ 
+    
+ 
+ 
+// if (number == '1') {
+//     print("");
+//     stdout.write("Enter the word for full meaning:");
+//     final word = stdin.readLineSync();
+//     showLoading();
+//     await Future.delayed(const Duration(seconds: 5));
+//     await meaning(word);
+//     await addToHistory(word);
+
+//     final rerun = stdin.readLineSync();
+//     if (rerun == 'run') {
+//       return main();
+//     } else if (rerun == 'end') {
+//       exit(0);
+//     }
+//   } else if (number == '2') {
+//     print("");
+//     stdout.write("Enter the word for full meaning:");
+//     final word = stdin.readLineSync();
+//     showLoading();
+//     await Future.delayed(const Duration(seconds: 5));
+//     await definition(word);
+//     await addToHistory(word);
+
+//     final rerun = stdin.readLineSync();
+//     if (rerun == 'run') {
+//       return main();
+//     } else if (rerun == 'end') {
+//       exit(0);
+//     }
+//   } else if (number == '3') {
+//     showHistory();
+//     print("");
+//     print("");
+//     print("Clear History");
+//     print("");
+//     print("");
+//     print("If you want to clear history type `Clear` in terminal");
+//     print("");
+//     print("");
+
+//     final rerun = stdin.readLineSync();
+//     if (rerun == 'run') {
+//       return main();
+//     } else if (rerun == 'end') {
+//       exit(0);
+//     }
+
+//     final delete = stdin.readLineSync();
+//     if (delete == "Clear") {
+//       deleteHistory();
+//     } else {
+//       print("You're good to go");
+//     }
+//   } else if (number == '4') {
+//     await about();
+
+//     final rerun = stdin.readLineSync();
+//     if (rerun == 'run') {
+//       return main();
+//     } else if (rerun == 'end') {
+//       exit(0);
+//     }
+//   } else if (number == '5') {
+//     await help();
+//     final rerun = stdin.readLineSync();
+
+//     if (rerun == 'run') {
+//       return main();
+//     } else if (rerun == 'end') {
+//       exit(0);
+//     }
+//   } else {
+//     print("Invalid choice. Please enter a number between 1 and 5.");
+
+//     final rerun = stdin.readLineSync();
+
+//     if (rerun == 'run') {
+//       return main();
+//     } else if (rerun == 'end') {
+//       exit(0);
+//     }
+//   }
+// }
