@@ -1,19 +1,22 @@
+import 'enumFunction.dart';
 import 'dart:io';
 import 'onlyDefinition.dart';
 import 'about.dart';
 import 'help.dart';
 import 'printFullMeaning.dart';
 import 'history.dart';
+
 import 'showloading.dart';
 
 Future<void> main() async {
   print("Welcome");
   print('------------');
-  print("1. Get full meaning of the word.");
-  print("2. Get only definitions of the word.");
+  print("1. Meaning");
+  print("2. Definitions");
   print("3. History");
-  print("4. About me");
+  print("4. About");
   print("5. Help");
+  print("6. Exit");
 
   print("");
 
@@ -25,13 +28,17 @@ Future<void> main() async {
       "Tip => If you want to terminate the program after one function type **end in terminal**");
   print("");
 
-  stdout.write("Enter the number corresponding to your choice:");
+  stdout.write("Enter the function you want to use:");
+  String userInput = stdin.readLineSync()!;
+  String lowercase = userInput.toString().toLowerCase();
+
   print("");
 
-  final number = int.parse(stdin.readLineSync()!);
+  dict? userChoice = dict.values
+      .firstWhere((func) => func.toString().split('.').last == lowercase);
 
-  switch (number) {
-    case 1:
+  switch (userChoice) {
+    case dict.meaning:
       print("");
       stdout.write("Enter the word for full meaning:");
       final word = stdin.readLineSync();
@@ -47,7 +54,7 @@ Future<void> main() async {
         exit(0);
       }
       break;
-    case 2:
+    case dict.definition:
       print("");
       stdout.write("Enter the word for all possible defenition:");
       final word = stdin.readLineSync();
@@ -63,7 +70,7 @@ Future<void> main() async {
         exit(0);
       }
       break;
-    case 3:
+    case dict.history:
       showHistory();
       print("");
       print("");
@@ -80,7 +87,7 @@ Future<void> main() async {
       }
       return main();
 
-    case 4:
+    case dict.about:
       await about();
 
       final rerun = stdin.readLineSync();
@@ -90,7 +97,7 @@ Future<void> main() async {
         exit(0);
       }
       break;
-    case 5:
+    case dict.help:
       await help();
       final rerun = stdin.readLineSync();
 
@@ -99,6 +106,9 @@ Future<void> main() async {
       } else if (rerun == 'end') {
         exit(0);
       }
+    case dict.exit:
+      await exit(0);
+
     default:
       print("Invalid choice. Please enter a number between 1 and 5.");
 
