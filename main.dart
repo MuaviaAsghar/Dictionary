@@ -20,11 +20,11 @@ Future<void> main() async {
   print("");
 
   print(
-      "Tip => If you want to rerun the program after one function type **run in terminal**");
+      "Tip => If you want to rerun the program after one function type **run** in terminal");
 
   print("");
   print(
-      "Tip => If you want to terminate the program after one function type **end in terminal**");
+      "Tip => If you want to terminate the program after one function type **end** in terminal");
   print("");
 
   stdout.write("Enter the name function you want to use:");
@@ -42,7 +42,7 @@ Future<void> main() async {
       stdout.write("Enter the word for full meaning:");
       final word = stdin.readLineSync();
       showLoading();
-      await Future.delayed(const Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 3));
       await meaning(word);
       await addToHistory(word);
 
@@ -58,7 +58,7 @@ Future<void> main() async {
       stdout.write("Enter the word for all possible defenition:");
       final word = stdin.readLineSync();
       showLoading();
-      await Future.delayed(const Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 3));
       await definition(word);
       await addToHistory(word);
 
